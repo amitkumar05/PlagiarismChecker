@@ -1,0 +1,86 @@
+#include<iostream>
+#include<stdio.h>
+#include<string.h>
+#include<fstream>
+#include "parser.h"
+#include<algorithm>
+#include<limits.h>
+using namespace std;
+int N=500;
+char a[2005],b[2005];
+int dp[2005][2005];
+
+int max(int x,int y)
+{
+  if(x>y)
+    return x;
+  else 
+    return y;
+}
+
+void lcs(char a[],char b[],int dp[][2005],int len,int len1)
+{
+  int i,j;
+  for(i=0;i<=len;i++)
+    {
+      for(j=0;j<=len1;j++)
+	{
+	  if(i==0 || j==0)
+	    dp[i][j]=0;
+	  else if(a[i-1]==b[j-1])
+	    dp[i][j]=dp[i-1][j-1]+1;
+	  else
+	    dp[i][j]=max(dp[i-1][j],dp[i][j-1]);
+	}
+    }
+}
+
+int main(int argc,char * argv[])
+{
+  char ch,f1[]="tmp1.txt",f2[]="tmp2.txt";
+  int t,i,j;
+  fstream ifile,ofile;
+  int total_lcs=0;
+  int l1=parse(argv[1],f1);
+  int l2=parse(argv[2],f2);
+  if(l1<l2)
+    {
+      strcpy(f1,"tmp1.txt");
+      strcpy(f2,"tmp2.txt");
+    }
+  else 
+    {
+      strcpy(f2,"tmp1.txt");
+      strcpy(f1,"tmp2.txt");
+    }
+  ifile.open(f1,ios::in);
+  while(ifile>>ch)
+    {
+      i=0;
+      while(ifile>>ch && i<N)
+	{
+	  a[i++]=ch;
+	}
+	a[i]='\0';
+	ofile.open(f2,ios::in);
+	int maximum=INT_MIN;		
+	while(ofile)
+	  {
+	    j=0;
+	    while(ofile>>ch && j<N)
+	      {
+		b[j++]=ch;
+	      }
+	    b[j]='\0';
+	    int len=strlen(a);
+	    int len1=strlen(b);
+  	    lcs(a,b,dp,len,len1);
+	    maximum=max(maximum,dp[len][len1]);
+	  }
+      ofile.close();
+      printf("Maximum  %d\n",maximum);
+      total_lcs+=maximum;
+    }
+  cout<<"Longest common subsequence  = "<<total_lcs<<"\n";
+  return 0;
+}

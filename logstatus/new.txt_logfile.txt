@@ -1,0 +1,11 @@
+File1		File2		W1	W2	Sim_score		Edit_score	LCS_score		Wt_Score
+new.txt	test.txt	0	183	2.33843e-06		0.6575		0		0.219167
+new.txt	t2.bobsey.txt	0	607	2.33843e-06		1		0		0.333334
+new.txt	t1.verne.txt	0	396	2.33843e-06		0.675		0		0.225001
+new.txt	new1.txt	0	1	2.33843e-06		0.995		0		0.331667
+new.txt	input.txt	0	183	2.33843e-06		0.6575		0		0.219167
+new.txt	t3.lewis.txt	0	409	2.33843e-06		0.8175		0		0.272501
+new.txt	fresh.txt	0	127	2.33843e-06		1		0		0.333334
+new.txt	input1.txt	0	183	2.33843e-06		1		0		0.333334
+new.txt	t4.copy.txt	0	855	2.33843e-06		1		0		0.333334
+new.txt	readme.txt	0	169	2.33843e-06		1		0		0.333334

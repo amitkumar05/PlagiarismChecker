@@ -1,0 +1,11 @@
+new1.txt		t4.copy.txt		1	855	0.485265		Not Plagarised
+readme.txt		t4.copy.txt		169	855	0.454477		Not Plagarised
+t3.lewis.txt		t4.copy.txt		409	855	0.882541		Plagarised
+fresh.txt		new1.txt		127	1	0.365001		Not Plagarised
+new.txt		t2.bobsey.txt		0	607	0.333334		Not Plagarised
+input1.txt		test.txt		183	183	0.88704		Plagarised
+input.txt		test.txt		183	183	0.987157		Plagarised
+t1.verne.txt		t2.bobsey.txt		396	607	0.907445		Plagarised
+t2.bobsey.txt		t1.verne.txt		607	396	0.907445		Plagarised
+test.txt		input.txt		183	183	0.987157		Plagarised
+t4.copy.txt		t3.lewis.txt		855	409	0.882541		Plagarised
